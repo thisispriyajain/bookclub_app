@@ -1,6 +1,6 @@
 # bookclub_app
 
-Book CLub App
+Book Club App
 
 ## Getting Started
 
