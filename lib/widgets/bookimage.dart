@@ -7,14 +7,14 @@ class BookImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: ClipRRect(
+      return ClipRRect(
         borderRadius: BorderRadius.circular(8.0),
         child: Image.network(
           imageURL,
           fit: BoxFit.cover,
+          width: 100.0,
+          height: 150.0,
         ),
-      ),
-    );
-  }
+      );
+    }
 }

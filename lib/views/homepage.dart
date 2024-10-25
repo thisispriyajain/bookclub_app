@@ -8,14 +8,23 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => BookCubit()..init(),
-      child: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text('Book Club'),
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Sort by',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -37,17 +46,28 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Books',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+
+           SizedBox(
+            height: 250.0,
               child: BlocBuilder<BookCubit, BookState>(
                 builder: (context, state) {
                   if(state is BookLoading) {
                     return const Center(child: CircularProgressIndicator());
                   } else if (state is BookLoaded) {
-                    return GridView.builder(
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        childAspectRatio: 0.6,
-                      ),
+                    return ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      physics: const ClampingScrollPhysics(),
                       itemCount: state.books.length,
                       itemBuilder: (context, index) {
                         final book = state.books[index];
@@ -59,19 +79,31 @@ class HomePage extends StatelessWidget {
                                 builder: (context) => BookDetailPage(book: book),
                               ),
                             ).then((_) {
-                                context.read<BookCubit>().init();
+                              context.read<BookCubit>().init();
                             });
                           },
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Column(
                               children: [
-                                Image.network(book.imageURL),
-                                Text(book.title, style: const TextStyle(fontWeight: FontWeight.bold)),
+                                Image.network(
+                                  book.imageURL,
+                                  fit: BoxFit.cover,
+                                  width: 100,
+                                  height: 150,
+                                ),
+                                const SizedBox(height: 8),
+                                Text(
+                                  book.title,
+                                  style: const TextStyle(fontWeight: FontWeight.bold),
+                                ),
                                 Text(book.author),
                               ],
                             ),
-                          );
-                        },
-                      );
+                          ),
+                        );
+                      },
+                    );
                   } else {
                     return const Center(child: Text('Error loading books'));
                   }
@@ -80,7 +112,6 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
+    }
   }
-}
