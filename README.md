@@ -1,6 +1,6 @@
 # bookclub_app
 
-A new Flutter project.
+Book Club App
 
 ## Getting Started
 
