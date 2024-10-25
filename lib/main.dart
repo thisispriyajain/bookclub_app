@@ -7,6 +7,7 @@ void main() {
   runApp(const myApp());
 }
 
+// ignore: camel_case_types
 class myApp extends StatelessWidget {
   const myApp({super.key});
 

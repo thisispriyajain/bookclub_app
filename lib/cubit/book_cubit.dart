@@ -35,25 +35,25 @@ class BookCubit extends Cubit<BookState> {
         title: "The Great Gatsby",
         author: "F. Scott Fitzgerald",
         description: "The Great Gatsby is a 1925 novel by F. Scott Fitzgerald that tells the story of Jay Gatsby, a wealthy man who tries to win back his first love, Daisy Buchanan",
-        imageURL: "https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg",
+        imageURL: "https://m.media-amazon.com/images/I/61dRoDRubtL._SL1500_.jpg?w=400&h=400",
       ),
       Book(
         title: "To Kill a Mockingbird",
         author: "Harper Lee",
         description: "To Kill a Mockingbird is a 1960 novel by Harper Lee that is a coming-of-age story and a drama about racism and prejudice.",
-        imageURL: "https://upload.wikimedia.org/wikipedia/commons/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg",
+        imageURL: "https://m.media-amazon.com/images/I/81aY1lxk+9L._SL1500_.jpg?w=400&h=400",
       ),
       Book(
         title: "Fahrenheit 451",
         author: "Ray Bradbury",
         description: "Fahrenheit 451 is a dystopian science fiction novel by Ray Bradbury that depicts a future American society where books are banned and burned, and people are numbed by constant noise, advertising, and TVs.",
-        imageURL: "https://upload.wikimedia.org/wikipedia/en/d/db/Fahrenheit_451_1st_ed_cover.jpg",
+        imageURL: "https://m.media-amazon.com/images/I/711ZL2p7DmL._SL1500_.jpg?w=400&h=400",
       ),
       Book(
         title: "The Catcher in the Rye",
         author: "J.D. Salinger",
         description: "The Catcher in the Rye by J.D. Salinger is a novel about a 16-year-old boy named Holden Caulfield who is expelled from his prep school and spends two days in New York City.",
-        imageURL: "https://upload.wikimedia.org/wikipedia/commons/8/89/The_Catcher_in_the_Rye_%281951%2C_first_edition_cover%29.jpg",
+        imageURL: "https://m.media-amazon.com/images/I/8125BDk3l9L._SL1500_.jpg?w=400&h=400",
       ),
     ];
 
